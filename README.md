@@ -1,5 +1,9 @@
 # ML-model-on-GKE-with-load-test
 
+## Deploy Docker to Google Kubernetes Engine
+Follow this instruction: [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)
+
+
 ## Load test with Vegeta
 
 [Vegeta](https://github.com/tsenart/vegeta) is a command line load testing tool written in Go. 
