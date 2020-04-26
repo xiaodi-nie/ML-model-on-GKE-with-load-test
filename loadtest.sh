@@ -1,1 +1,0 @@
-vegeta attack -targets=tmp -rate=1100 -duration=1s | tee results.bin | vegeta report

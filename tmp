@@ -1,3 +1,0 @@
-POST http://35.243.217.145:80/predict
-Content-Type: application/json
-@payload.json
