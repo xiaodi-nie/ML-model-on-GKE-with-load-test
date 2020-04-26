@@ -75,6 +75,11 @@ def predict():
     inference_payload = pd.DataFrame(json_payload)
     LOG.info(f"inference payload DataFrame: {inference_payload}")
     prediction = list(clf.predict(inference_payload))
+    for idx, item in enumerate(prediction):
+      if(item==1):
+        prediction[idx]='Survived!'
+      else:
+        prediction[idx]='Sorry:('
     return jsonify({'survive_or_not': prediction})
 
 if __name__ == "__main__":
