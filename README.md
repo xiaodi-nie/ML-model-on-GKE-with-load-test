@@ -1,6 +1,13 @@
 # ML-model-on-GKE-with-load-test
 
+## Titanic Prediction Model
+
 ## Deploy Docker to Google Kubernetes Engine
+
+After the model is pickled we can directly load it and run predictions from a simple flask app. We used Python3.6 in both the prediction model and the flask app.
+
+The whole thing is wrapped inside a docker container, pushed to google container registry, then deployed on a GKE cluster. A load balancer was set up to expose a single endpoint, and behind it there were 6 duplicated pods to better handle the traffic.
+
 Follow this instruction: [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)
 
 
@@ -35,15 +42,15 @@ See [Documents](https://github.com/tsenart/vegeta)
 
 ### Run load tests
 
-In this project we have a endpoint provided by a load balancer directing traffic to 3 pods running on a Google Kubernetes cluster, and the endpoint is expecting POST request with JSON payload. 
+In this project we have a endpoint provided by a load balancer directing traffic to the pods on the cluster, and the endpoint is expecting POST request with JSON payload. 
 
 So we use this command to run the load test:
 ```
-vegeta attack -targets=tmp -rate=1100 -duration=1s | tee results.bin | vegeta report
+vegeta attack -targets=tmp -rate=1100 -duration=1.5s | tee results.bin | vegeta report
 ```
 The POST request is in the ```tmp``` file and it looks like this:
 ```
-POST http://35.243.217.145:80/predict
+POST http://[ENDPOINT]:8080/predict
 Content-Type: application/json
 @payload.json
 ```
@@ -70,9 +77,9 @@ This test would generate 1100 requests/second and you can check out the results 
     This will generate histogram about request count on specific time stamps:
     ```
     Bucket           #     %       Histogram
-    [0s,     200ms]  4     0.37%   
-    [200ms,  400ms]  22    2.01%   #
-    [400ms,  600ms]  18    1.64%   #
-    [600ms,  800ms]  21    1.92%   #
-    [800ms,  +Inf]   1030  94.06%  ######################################################################
+    [0s,     300ms]  11    0.67%   
+    [300ms,  600ms]  22    1.33%   #
+    [600ms,  900ms]  40    2.42%   #
+    [900ms,  1.2s]   40    2.42%   #
+    [1.2s,   +Inf]   1537  93.15%  #####################################################################
     ```
