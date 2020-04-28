@@ -83,5 +83,5 @@ def predict():
     return jsonify({'survive_or_not': prediction})
 
 if __name__ == "__main__":
-    clf = joblib.load("Titanic_prediction.joblib")
+    clf = joblib.load("Titanic_prediction_updated.joblib")
     app.run(host='0.0.0.0', port=8080, debug=True)
