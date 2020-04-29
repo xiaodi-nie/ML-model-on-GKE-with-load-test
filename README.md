@@ -1,6 +1,23 @@
 # ML-model-on-GKE-with-load-test
 
-## Titanic Prediction Model
+## Titanic Passenger Survival Prediction
+
+In this part, we used the [Titanic dataset](https://www.kaggle.com/c/titanic/data) and created a classification model using the Random Forests algorithm.
+
+This dataset contains 891 training samples and 418 test samples with 11 features (PassengerId, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked). There are labels to indicate whether the passenger is survived or not in training data, but the test data do not have labels.
+
+There are mainly 6 steps in the process of creating models:
+
+1. Analyzing feature contributions
+2. Data preprocessing (processing missing data and standardizing features)
+3. Applying Random Forests to the model and evaluating performance using cross-validation and Out of Bag (OOB) score.
+4. Analyzing feature importance for Random Forests and tuning parameters
+5. Optimizing the model using the tuned parameters
+6. Save the final model in the *Titanic_prediction_updated.joblib* file
+
+The final model has a 92.26% training accuracy and 82.38% OOB score.
+The model and dataset are under the *Titanic_model_prediction* folder.
+All code, analysis, and model evaluations are presented in the *Titanic_prediction_updated.ipynb* file.
 
 ## Deploy Docker to Google Kubernetes Engine
 
