@@ -10,4 +10,4 @@ There are mainly  steps in the process of creating models:
 5. Repeating step 3 using the tuned parameters
 6. Save the final model in a .joblib file  
 <br>
-All code and analysis is presented in the .ipynb file.
+All code, analysis, and model evaluations are presented in the .ipynb file.
