@@ -56,7 +56,20 @@ Content-Type: application/json
 ```
 The input data to the prediction model is in the ```payload.json``` file.
 
-This test would generate 1100 requests/second and you can check out the results in 3 ways:
+This test would generate 1100 requests/second and the output would look something like this:
+```
+ec2-user:~/environment/finalproject/loadtest (master) $ ./loadtest.sh 
+Requests      [total, rate, throughput]         1650, 1100.75, 82.88
+Duration      [total, attack, wait]             19.907s, 1.499s, 18.408s
+Latencies     [min, mean, 50, 90, 95, 99, max]  158.774ms, 5.694s, 4.497s, 13.453s, 16.496s, 18.335s, 18.705s
+Bytes In      [total, mean]                     75900, 46.00
+Bytes Out     [total, mean]                     389400, 236.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:1650  
+Error Set:
+```
+
+You can also check out the results in 3 ways:
 
 1. Metrics
 
