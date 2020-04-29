@@ -17,7 +17,7 @@ There are mainly 6 steps in the process of creating models:
 
 The final model has a 92.26% training accuracy and 82.38% OOB score.
 The model and dataset are under the *Titanic_model_prediction* folder.
-All code, analysis, and model evaluations are presented in the *Titanic_prediction.updated.ipynb* file.
+All code, analysis, and model evaluations are presented in the *Titanic_prediction_updated.ipynb* file.
 
 ## Deploy Docker to Google Kubernetes Engine
 
