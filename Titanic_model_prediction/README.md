@@ -1,4 +1,4 @@
-# Titanic Survival Classifivation
+# Titanic Survival Classification
 In this part, we used the [Titanic dataset](https://www.kaggle.com/c/titanic/data) and created a classification model using the Random Forests algorithm.  
 <br>
 This dataset contains 891 training samples and 418 test samples with 11 features.  
