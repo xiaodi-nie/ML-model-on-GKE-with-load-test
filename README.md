@@ -1,5 +1,7 @@
 # ML-model-on-GKE-with-load-test
 
+Group Members: Xiaodi Nie, Yueyang Pan, Yuqiao Liang, Yijie Yan
+
 ## Titanic Passenger Survival Prediction
 
 In this part, we used the [Titanic dataset](https://www.kaggle.com/c/titanic/data) and created a classification model using the Random Forests algorithm.
