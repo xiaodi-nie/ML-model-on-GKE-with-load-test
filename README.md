@@ -1,5 +1,6 @@
-# ML-model-on-GKE-with-load-test
+# Machine Learning Flask App on Google Kubernetes Engine with Load Test
 
+This is the final project for a Duke Graduate level Cloud Analysis course.
 Group Members: Xiaodi Nie, Yueyang Pan, Yuqiao Liang, Yijie Yan
 
 ## Titanic Passenger Survival Prediction
@@ -23,11 +24,11 @@ All code, analysis, and model evaluations are presented in the *Titanic_predicti
 
 ## Deploy Docker to Google Kubernetes Engine
 
-After the model is pickled we can directly load it and run predictions from a simple flask app. We used Python3.6 in both the prediction model and the flask app.
+After the model is pickled into a ```.joblib``` file, we can directly load it and run predictions from a simple flask app. We used Python3.6 in both the prediction model and the flask app.
 
-The whole thing is wrapped inside a docker container, pushed to google container registry, then deployed on a GKE cluster. A load balancer was set up to expose a single endpoint, and behind it there were 6 duplicated pods to better handle the traffic.
+The whole thing is wrapped inside a docker container, pushed to google container registry, then deployed on a Google Kubernetes Engine cluster. A load balancer was set up to expose a single endpoint, and behind it there were 6 duplicated pods(one pod basically contains one container) to better handle the traffic.
 
-Follow this instruction: [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)
+Follow this instruction to deploy and update: [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)
 
 
 ## Load test with Vegeta
